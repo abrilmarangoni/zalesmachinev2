@@ -55,16 +55,18 @@ export function Works() {
           deliver leads on autopilot, predictably and consistently.
         </p>
 
-        <div className="relative w-full aspect-video max-w-5xl mx-auto rounded-lg overflow-hidden border border-white/10 group">
-          <iframe
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/lnvnm-xrBPs?si=d8W3a1gC7X1xGBfL"
-            title="ZalesMachine System Demo"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-            className="absolute inset-0 grayscale group-hover:grayscale-0 transition-all duration-500"
-          />
+        <div className="flex justify-center mt-8">
+          <motion.a
+            href="https://www.youtube.com/watch?v=lnvnm-xrBPs"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cursor-hover
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-6 py-3 border border-white/20 font-mono text-sm tracking-wide uppercase bg-transparent backdrop-blur-sm hover:bg-white hover:text-black transition-colors duration-500"
+          >
+            Watch Demo Video
+          </motion.a>
         </div>
       </motion.div>
 
@@ -183,12 +185,22 @@ export function Works() {
       </div>
 
       <div className="flex items-center justify-center gap-6 mt-28 md:mt-32 lg:mt-40">
-        <button className="font-sans font-thin bg-white h-[44px] rounded-lg flex items-center justify-center px-6 shadow-lg hover:bg-gray-100 transition-colors text-black">
+        <motion.button
+          data-cursor-hover
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="px-6 py-3 border border-white/20 font-mono text-sm tracking-wide uppercase bg-transparent backdrop-blur-sm hover:bg-white hover:text-black transition-colors duration-500"
+        >
           Meet the Team
-        </button>
-        <button className="font-sans font-thin flex items-center justify-center text-white/70 hover:text-white transition-colors">
+        </motion.button>
+        <motion.button
+          data-cursor-hover
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="px-6 py-3 font-mono text-sm tracking-wide uppercase bg-transparent hover:text-white/70 transition-colors duration-300"
+        >
           Book a Call →
-        </button>
+        </motion.button>
       </div>
 
       {/* Bottom Border */}

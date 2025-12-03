@@ -169,10 +169,10 @@ export function About() {
                           <div className="h-3 w-3 rounded-full bg-violet-400/60" />
                           <div className="h-3 w-3 rounded-full bg-violet-400/60" />
                         </div>
-                        <span className="ml-4 text-sm text-white/40 font-sans font-thin">Failed Cold Email</span>
+                        <span className="ml-4 text-sm text-white/40 font-mono">Failed Cold Email</span>
                       </div>
 
-                      <div className="font-sans font-thin text-[14px] leading-tight text-white/90">
+                      <div className="font-mono text-sm leading-tight text-white/90">
                         <pre className="whitespace-pre-wrap">
                           {displayedFailedText.split("\n").map((line, index) => {
                             const isAllCaps =
@@ -246,10 +246,10 @@ export function About() {
                           <div className="h-3 w-3 rounded-full bg-emerald-400/60" />
                           <div className="h-3 w-3 rounded-full bg-emerald-400/60" />
                         </div>
-                        <span className="ml-4 text-sm text-white/40 font-sans font-thin">High-Performing Email</span>
+                        <span className="ml-4 text-sm text-white/40 font-mono">High-Performing Email</span>
                       </div>
 
-                      <div className="font-sans font-thin text-[14px] leading-tight text-white/90">
+                      <div className="font-mono text-sm leading-tight text-white/90">
                         <pre className="whitespace-pre-wrap">{displayedSuccessText}</pre>
                         {showSuccessResults && (
                           <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-2">
