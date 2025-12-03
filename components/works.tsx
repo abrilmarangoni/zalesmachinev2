@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import type React from "react"
 
 import { useState } from "react"
+import FullStackAISolutions from "./fullstack-solutions"
 
 const solutions = [
   {
@@ -69,6 +70,11 @@ export function Works() {
           </motion.a>
         </div>
       </motion.div>
+
+      {/* Full-Stack AI Solutions Section */}
+      <div className="py-20 md:py-28">
+        <FullStackAISolutions />
+      </div>
 
       {/* New Title and Subtitle for the Solutions Section */}
       <motion.div
