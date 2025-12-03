@@ -84,7 +84,7 @@ export function Works() {
 
       <div className="grid gap-32 lg:grid-cols-2 lg:gap-40 max-w-7xl mx-auto">
         {/* Left Column - Solutions */}
-        <div className="space-y-20 md:space-y-24 lg:space-y-28">
+        <div className="space-y-12 md:space-y-16 lg:space-y-20">
           {solutions.map((solution, index) => (
             <motion.div
               key={solution.id}
@@ -97,21 +97,21 @@ export function Works() {
               onMouseLeave={() => setHoveredId(null)}
             >
               <div
-                className={`border-b pb-12 transition-all duration-300 ease-out ${
+                className={`border-b pb-8 transition-all duration-300 ease-out ${
                   hoveredId === solution.id
                     ? "translate-x-1 border-white/30 opacity-100 brightness-125"
                     : "border-white/20 opacity-85"
                 }`}
               >
                 <h3
-                  className={`font-sans mb-5 text-2xl md:text-3xl font-thin transition-colors duration-300 ${
+                  className={`font-sans mb-3 text-xl md:text-2xl lg:text-2xl font-thin transition-colors duration-300 ${
                     hoveredId === solution.id ? "text-white" : "text-white/85"
                   }`}
                 >
                   {solution.title}
                 </h3>
                 <p
-                  className={`font-sans text-base md:text-lg font-thin leading-relaxed transition-colors duration-300 ${
+                  className={`font-sans text-sm md:text-base font-thin leading-snug transition-colors duration-300 ${
                     hoveredId === solution.id ? "text-white/95" : "text-white/70"
                   }`}
                 >

@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Button } from "@/components/ui/button"
 
 const navLinks = [
   { label: "Features", href: "#features" },
@@ -39,9 +38,10 @@ export function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled ? "bg-background/80 backdrop-blur-md border-b border-border" : ""
+        className={`fixed top-0 left-0 right-0 z-[10000] transition-all duration-500 ${
+          isScrolled ? "bg-background/90 backdrop-blur-sm border-b border-border" : ""
         }`}
+        style={{ isolation: "isolate" }}
       >
         <nav className="flex items-center justify-between px-6 py-4 my-0 md:px-12 md:py-5">
           <a
@@ -52,7 +52,7 @@ export function Navbar() {
             }}
             className="group flex items-center gap-2"
           >
-            <span className="font-mono text-xs tracking-widest text-foreground">zalesMachine</span>
+            <span className="font-mono text-sm tracking-widest text-white">zalesMachine</span>
             <span className="w-1.5 h-1.5 rounded-full bg-accent group-hover:scale-150 transition-transform duration-300" />
           </a>
 
@@ -62,7 +62,7 @@ export function Navbar() {
               <li key={link.label}>
                 <button
                   onClick={() => scrollToSection(link.href)}
-                  className="group relative font-mono text-xs tracking-wider text-foreground hover:text-foreground transition-colors duration-300"
+                  className="group relative font-mono text-sm tracking-wider text-white hover:text-white/80 transition-colors duration-300"
                 >
                   <span className="text-accent mr-1">0{index + 1}</span>
                   {link.label.toUpperCase()}
@@ -76,22 +76,23 @@ export function Navbar() {
           <div className="hidden md:flex items-center gap-4">
             <button
               onClick={() => setLanguage(language === "EN" ? "ES" : "EN")}
-              className="font-mono text-xs tracking-wider text-foreground hover:text-foreground/80 transition-colors duration-300 flex items-center gap-1"
+              className="font-mono text-sm tracking-wide text-white hover:text-white/80 transition-colors duration-300 flex items-center gap-1 uppercase"
             >
-              <span className={language === "EN" ? "text-accent" : ""}>EN</span>
-              <span>/</span>
-              <span className={language === "ES" ? "text-accent" : ""}>ES</span>
+              <span className={language === "EN" ? "text-accent" : "text-white/60"}>EN</span>
+              <span className="text-white/40">/</span>
+              <span className={language === "ES" ? "text-accent" : "text-white/60"}>ES</span>
             </button>
 
             {/* Contact Us Button */}
-            <Button
-              variant="outline"
-              size="sm"
+            <motion.button
+              data-cursor-hover
               onClick={() => scrollToSection("#contact")}
-              className="font-mono text-xs tracking-wider"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-6 py-3 border border-white/20 font-mono text-sm tracking-wide uppercase bg-transparent backdrop-blur-sm hover:bg-white hover:text-black transition-colors duration-500"
             >
               CONTACT US
-            </Button>
+            </motion.button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -102,15 +103,15 @@ export function Navbar() {
           >
             <motion.span
               animate={isMenuOpen ? { rotate: 45, y: 5 } : { rotate: 0, y: 0 }}
-              className="w-6 h-px bg-foreground origin-center"
+              className="w-6 h-px bg-white origin-center"
             />
             <motion.span
               animate={isMenuOpen ? { opacity: 0, x: -10 } : { opacity: 1, x: 0 }}
-              className="w-6 h-px bg-foreground"
+              className="w-6 h-px bg-white"
             />
             <motion.span
               animate={isMenuOpen ? { rotate: -45, y: -5 } : { rotate: 0, y: 0 }}
-              className="w-6 h-px bg-foreground origin-center"
+              className="w-6 h-px bg-white origin-center"
             />
           </button>
         </nav>
@@ -135,7 +136,7 @@ export function Navbar() {
                   exit={{ opacity: 0, y: 20 }}
                   transition={{ delay: index * 0.1 }}
                   onClick={() => scrollToSection(link.href)}
-                  className="group text-4xl font-sans tracking-tight text-foreground"
+                  className="group text-4xl font-mono tracking-tight text-white"
                 >
                   <span className="text-accent font-mono text-sm mr-2">0{index + 1}</span>
                   {link.label}
@@ -150,20 +151,21 @@ export function Navbar() {
               >
                 <button
                   onClick={() => setLanguage(language === "EN" ? "ES" : "EN")}
-                  className="font-mono text-xs tracking-wider text-foreground hover:text-foreground/80 transition-colors duration-300 flex items-center gap-1"
+                  className="font-mono text-sm tracking-wide text-white hover:text-white/80 transition-colors duration-300 flex items-center gap-1 uppercase"
                 >
-                  <span className={language === "EN" ? "text-accent" : ""}>EN</span>
-                  <span>/</span>
-                  <span className={language === "ES" ? "text-accent" : ""}>ES</span>
+                  <span className={language === "EN" ? "text-accent" : "text-white/60"}>EN</span>
+                  <span className="text-white/40">/</span>
+                  <span className={language === "ES" ? "text-accent" : "text-white/60"}>ES</span>
                 </button>
-                <Button
-                  variant="outline"
-                  size="sm"
+                <motion.button
+                  data-cursor-hover
                   onClick={() => scrollToSection("#contact")}
-                  className="font-mono text-xs tracking-wider"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-6 py-3 border border-white/20 font-mono text-sm tracking-wide uppercase bg-transparent backdrop-blur-sm hover:bg-white hover:text-black transition-colors duration-500"
                 >
                   CONTACT US
-                </Button>
+                </motion.button>
               </motion.div>
             </nav>
           </motion.div>
